@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
-
 import './globals.css'
+import NextTopLoader from 'nextjs-toploader';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={poppins.variable}>{children}</body>
+        <body className={poppins.variable}><NextTopLoader />{children}</body>
       </html>
     </ClerkProvider>
   )
